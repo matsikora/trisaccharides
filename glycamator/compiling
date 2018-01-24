@@ -1,0 +1,1 @@
+mpic++ clashes.cc -LGMML/include/gmml/ -lgmml -lmpi 

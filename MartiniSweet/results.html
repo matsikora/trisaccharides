@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+ <title>Molecular Dynamics - Oligosaccharide Builder - Build Glycan</title>
+ <!DOCTYPE html>
+<!--[if IE 7 | IE 8]>
+<html class="ie" dir="ltr" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>GLYCAM-Web | Utilities for molecular modeling of carbohydrates</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="icon" href="/img/logo.ico" type="image/ico" />
+<link rel="shortcut icon" href="/img/logo.ico" type="image/ico" />
+
+
+<!--[if lt IE 9]>
+<script src="http://glycam.org/wp-content/themes/twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<meta name='robots' content='noindex,nofollow' />
+<!--link rel="alternate" type="application/rss+xml" title="GLYCAM-Web &raquo; Feed" href="http://glycam.org/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="GLYCAM-Web &raquo; Comments Feed" href="http://glycam.org/?feed=comments-rss2" />
+<link rel='stylesheet' id='theme-my-login-css'  href='http://glycam.org/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#038;subset=latin,latin-ext' type='text/css' media='all' /-->
+<link rel='stylesheet' id='twentytwelve-style-css'  href='/css/stylewp.css' type='text/css' media='all' />
+<!--link rel='stylesheet' id='wp-ui-css'  href='http://glycam.org/wp-content/plugins/wp-ui/wp-ui.css?ver=3.4.2' type='text/css' media='all' /-->
+<!--link rel='stylesheet' id='wpui-light-css'  href='http://glycam.org/wp-content/plugins/wp-ui/css/wpui-light.css?ver=3.4.2' type='text/css' media='all' /-->
+<!--link rel='stylesheet' id='wpui-custom-css-css'  href='http://glycam.org/?wpui-css=css&#038;ver=3.4.2' type='text/css' media='all' /-->
+<!--script type='text/javascript' src='http://glycam.org/wp-includes/js/jquery/jquery.js?ver=1.7.2'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js?ver=1.8.21'></script>
+<script type='text/javascript'-->
+
+</script>
+<!--script type="text/javascript" src="http://www.google.com/cse/tools/onthefly?form=searchbox_demo&lang="></script-->
+
+<!--script type='text/javascript' src='http://glycam.org/wp-content/plugins/wp-ui/js/wp-ui.js?ver=0.8.5'></script-->
+<!--link rel='prev' title='Sample Page' href='http://glycam.org/?page_id=391' />
+<link rel='next' title='About GLYCAM-Web' href='http://glycam.org/?page_id=90' />
+<link rel='canonical' href='http://glycam.org/' /-->
+
+						<style type="text/css">
+							<!--
+							.juiz_last_tweet_inside{color:#666;}
+.juiz_last_tweet_inside ul{position:relative;padding:15px;margin:0;background-color:#e5e5e5;background-image: -webkit-linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0));background-image: -moz-linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0));background-image: -ms-linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0));background-image: -o-linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0));background-image: linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0));-webkit-border-radius:6px;-moz-border-radius:6px; border-radius:6px;-webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.05);-moz-box-shadow:1px 1px 3px rgba(0,0,0,0.05);box-shadow:1px 1px 3px rgba(0,0,0,0.05);border:1px solid #ddd;}
+.juiz_last_tweet_inside ul:after {position:absolute;content:" ";bottom:-12px;left:89px;border-top:12px solid #e5e5e5;border-left:6px solid transparent;border-right:6px solid transparent}
+.juiz_last_tweet_inside li{display:block;list-style:none;background:none}
+.juiz_last_tweet_inside li+li{margin-top:12px;padding-top:12px;border-top:1px solid #fff;-webkit-box-shadow:0 1px 0 rgba(0,0,0,0.1) inset;-moz-box-shadow:0 1px 0 rgba(0,0,0,0.1) inset;box-shadow:0 1px 0 rgba(0,0,0,0.1) inset}
+.juiz_last_tweet_inside .user_avatar{float:right;height:48px;width:48px;position:relative;margin-right:-10px; z-index:2}
+.juiz_last_tweet_inside .user_avatar a{position:absolute;height:48px;width:48px;border:2px solid #fff;top:-23px; right:-13px;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;overflow: hidden;-webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.25);-moz-box-shadow:0 0 2px rgba(0, 0, 0, 0.25);box-shadow:0 0 2px rgba(0, 0, 0, 0.25)}
+.juiz_last_tweet_inside .user_avatar a img{border:0 none;max-width:100%;-webkit-border-radius:12px; -moz-border-radius:12px;border-radius:12px}
+.juiz_last_tweet_inside .juiz_lt_content{display:block;padding-bottom:5px;line-height:1.5em;border-bottom:1px dashed #ccc;border-color:rgba(0,0,0,0.1);word-wrap:break-word}
+.juiz_last_tweet_inside .juiz_lt_content a{padding:0;background:transparent}
+.juiz_last_tweet_inside .juiz_action_links {display:block;font-size:.7em; text-align:left;opacity: .5;-webkit-transition:opacity .5s;-moz-transition:opacity .5s;-ms-transition:opacity .5s;-o-transition:opacity .5s;transition:opacity .5s;}
+.juiz_last_tweet_inside .juiz_action_links:hover {opacity:1;}
+.juiz_last_tweet_inside .juiz_action_links a{display:inline-block;text-indent:-9999px;width:22px;height:16px;margin-right:5px;background:transparent url(../img/sprite.png) 2px 0 scroll no-repeat;-webkit-transition:background .25s;-moz-transition:background .25s;-ms-transition:background .25s;-o-transition:background .25s;transition:background .25s;}
+.juiz_last_tweet_inside .juiz_action_links .juiz_al_retweet{background-position: 0 -17px}
+.juiz_last_tweet_inside .juiz_action_links .juiz_al_fav{width:18px;background-position: 0 -37px}
+.juiz_last_tweet_inside .juiz_action_links a:hover,.juiz_last_tweet_inside .juiz_action_links a:focus {background-position: -21px 0;}
+.juiz_last_tweet_inside .juiz_action_links .juiz_al_retweet:hover,.juiz_last_tweet_inside .juiz_action_links .juiz_al_retweet:focus{background-position: -27px -17px}
+.juiz_last_tweet_inside .juiz_action_links .juiz_al_fav:hover,.juiz_last_tweet_inside .juiz_action_links .juiz_al_fav:focus{background-position: -21px -37px}
+.juiz_last_tweet_inside .juiz_ltw_sep {display:none;}
+.juiz_last_tweet_inside .juiz_last_tweet_metadata{font-size: 10px}
+.juiz_last_tweet_follow_us{min-height:22px;margin:0;padding:7px 0 10px 48px;background:url(../img/twitter.png) 6px 11px no-repeat;font-size:10px}
+.juiz_last_tweet_widget .hasjs li+li,.juiz_ltw_autoslide.hasjs li+li{margin-top:0;padding-top:0;border-top:0; -webkit-box-shadow:0 0 0;-moz-box-shadow:0 0 0;box-shadow:0 0 0}
+.juiz_ltw_autoslide.hasjs .user_avatar{margin-right:20px}
+.juiz_ltw_autoslide.hasjs .user_avatar a{top:-10px} 
+							-->
+						</style>
+					
+<!-- Contact Us Form -->
+<style type="text/css">
+.cuf_input {display:none !important; visibility:hidden !important;}
+#contactsubmit:hover, #contactsubmit:focus {
+	background: #2B2845 repeat-x;
+	color: #FFF;
+	text-decoration: none;
+}
+#contactsubmit:active {background: #DDD;}
+#contactsubmit {
+	color: #FFF;
+	background: #9598CB repeat-x;
+	display: block;
+	float: left;
+	height: 38px;
+	padding-right: 23px;
+	padding-left: 23px;
+	font-size: 15px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+	filter: dropshadow(color=rgba(0, 0, 0, 0.2), offx=0, offy=1);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-transition: background 300ms linear;
+-moz-transition: background 300ms linear;
+-o-transition: background 300ms linear;
+transition: background 300ms linear;
+-webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+text-align:center
+}
+.cuf_field {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	background:#fff;
+	border:1px solid #A9B3BC;
+	padding:8px;
+	width:100%;
+	margin-top:5px;
+margin-bottom:15px;
+	outline:none
+}
+#tinyform {
+clear: both;
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
+	/*margin-top:30px;*/
+	padding:20px;
+	padding-bottom:0px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.2);
+	box-shadow:0px 0px 10px 0px rgba(0,0,0,0.2);
+	border:4px solid #FFF;
+	-webkit-transition:all 200ms linear;
+	-moz-transition:all 200ms linear;
+	-o-transition:all 200ms linear;
+	transition:all 200ms linear;
+}
+.cuf_textarea {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	background:#fff;
+	border:1px solid #A9B3BC;
+	padding:8px;
+	width:100%;
+	margin-top:5px;
+	outline:none;
+margin-bottom:15px;
+}
+</style>
+
+
+
+
+
+<!--link rel="Shortcut Icon" type="image/x-icon" href="/img/dev-logo-branadmin1.png" />
+<link rel="apple-touch-icon" href="http://glycam.org/wp-content/uploads/2012/10/dev-logo-brand.png" />
+<style type="text/css" media="screen">body{position:relative}#dynamic-to-top{display:none;overflow:hidden;width:auto;z-index:90;position:fixed;bottom:20px;right:20px;top:auto;left:auto;font-family:sans-serif;font-size:1em;color:#fff;text-decoration:none;text-shadow:0 1px 0 #333;font-weight:bold;padding:17px 22px;border:7px solid #9498CD;background:#4C4D68;-webkit-background-origin:border;-moz-background-origin:border;-icab-background-origin:border;-khtml-background-origin:border;-o-background-origin:border;background-origin:border;-webkit-background-clip:padding-box;-moz-background-clip:padding-box;-icab-background-clip:padding-box;-khtml-background-clip:padding-box;-o-background-clip:padding-box;background-clip:padding-box;-webkit-box-shadow:0 1px 3px rgba( 0, 0, 0, 0.4 ), inset 0 0 0 1px rgba( 0, 0, 0, 0.2 ), inset 0 1px 0 rgba( 255, 255, 255, .4 ), inset 0 10px 10px rgba( 255, 255, 255, .1 );-ms-box-shadow:0 1px 3px rgba( 0, 0, 0, 0.4 ), inset 0 0 0 1px rgba( 0, 0, 0, 0.2 ), inset 0 1px 0 rgba( 255, 255, 255, .4 ), inset 0 10px 10px rgba( 255, 255, 255, .1 );-moz-box-shadow:0 1px 3px rgba( 0, 0, 0, 0.4 ), inset 0 0 0 1px rgba( 0, 0, 0, 0.2 ), inset 0 1px 0 rgba( 255, 255, 255, .4 ), inset 0 10px 10px rgba( 255, 255, 255, .1 );-o-box-shadow:0 1px 3px rgba( 0, 0, 0, 0.4 ), inset 0 0 0 1px rgba( 0, 0, 0, 0.2 ), inset 0 1px 0 rgba( 255, 255, 255, .4 ), inset 0 10px 10px rgba( 255, 255, 255, .1 );-khtml-box-shadow:0 1px 3px rgba( 0, 0, 0, 0.4 ), inset 0 0 0 1px rgba( 0, 0, 0, 0.2 ), inset 0 1px 0 rgba( 255, 255, 255, .4 ), inset 0 10px 10px rgba( 255, 255, 255, .1 );-icab-box-shadow:0 1px 3px rgba( 0, 0, 0, 0.4 ), inset 0 0 0 1px rgba( 0, 0, 0, 0.2 ), inset 0 1px 0 rgba( 255, 255, 255, .4 ), inset 0 10px 10px rgba( 255, 255, 255, .1 );box-shadow:0 1px 3px rgba( 0, 0, 0, 0.4 ), inset 0 0 0 1px rgba( 0, 0, 0, 0.2 ), inset 0 1px 0 rgba( 255, 255, 255, .4 ), inset 0 10px 10px rgba( 255, 255, 255, .1 );-webkit-border-radius:10px;-moz-border-radius:10px;-icab-border-radius:10px;-khtml-border-radius:10px;border-radius:10px}#dynamic-to-top:hover{background:#4fd6e2;background:#4C4D68 -webkit-gradient( linear, 0% 0%, 0% 100%, from( rgba( 255, 255, 255, .2 ) ), to( rgba( 0, 0, 0, 0 ) ) );background:#4C4D68 -webkit-linear-gradient( top, rgba( 255, 255, 255, .2 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -khtml-linear-gradient( top, rgba( 255, 255, 255, .2 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -moz-linear-gradient( top, rgba( 255, 255, 255, .2 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -o-linear-gradient( top, rgba( 255, 255, 255, .2 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -ms-linear-gradient( top, rgba( 255, 255, 255, .2 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -icab-linear-gradient( top, rgba( 255, 255, 255, .2 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 linear-gradient( top, rgba( 255, 255, 255, .2 ), rgba( 0, 0, 0, 0 ) );cursor:pointer}#dynamic-to-top:active{background:#4C4D68;background:#4C4D68 -webkit-gradient( linear, 0% 0%, 0% 100%, from( rgba( 0, 0, 0, .3 ) ), to( rgba( 0, 0, 0, 0 ) ) );background:#4C4D68 -webkit-linear-gradient( top, rgba( 0, 0, 0, .1 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -moz-linear-gradient( top, rgba( 0, 0, 0, .1 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -khtml-linear-gradient( top, rgba( 0, 0, 0, .1 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -o-linear-gradient( top, rgba( 0, 0, 0, .1 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -ms-linear-gradient( top, rgba( 0, 0, 0, .1 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 -icab-linear-gradient( top, rgba( 0, 0, 0, .1 ), rgba( 0, 0, 0, 0 ) );background:#4C4D68 linear-gradient( top, rgba( 0, 0, 0, .1 ), rgba( 0, 0, 0, 0 ) )}#dynamic-to-top,#dynamic-to-top:active,#dynamic-to-top:focus,#dynamic-to-top:hover{outline:none}#dynamic-to-top span{display:block;overflow:hidden;width:14px;height:12px;background:url( http://glycam.org/wp-content/plugins/dynamic-to-top/css/images/up.png )no-repeat center center}</style-->	<style type="text/css">
+			.site-title,
+		.site-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #fff; }
+</style>
+</head>
+
+<body class="home page page-id-41 page-parent page-template page-template-page-templatesfront-page-php custom-background template-front-page two-sidebars custom-background-white custom-font-enabled">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+		<div style="margin-bottom: -60px; padding-top: 40px;" class="logo">
+<a href="/"><img src="/img/logo.jpg" width=100; " alt="GLYCAM-Web | Utilities for molecular modeling of carbohydrates" /></a>
+</div>	
+
+		</hgroup>
+
+		<div align="right"  style="float:left; margin-left:120px"><nav id="site-navigation" class="main-navigation" role="navigation">
+			<!--h3 class="menu-toggle">Menu</h3-->
+
+			<!--div class="skip-link assistive-text"><a href="#content" title="Skip to content">Skip to content</a></div-->
+ 			<!--div class="menu-new-menu-container"-->
+			<ul><!-- id="menu-new-menu" class="nav-menu"--><li id="menu-item-766" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-41 current_page_item menu-item-766" ><a href="/">Home</a></li>
+<li id="menu-item-746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-746"><a href="about">ABOUT US</a></li>
+<li id="menu-item-749" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-749"><a href="/docs/news">NEWS</a></li>
+<!--li id="menu-item-748" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-748"><a href="/docs/knownissues">KNOWN ISSUES</a></li-->
+
+<li ><a href="/docs/legacy-site/">LEGACY TOOLS</a></li>
+<li id="menu-item-767" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-767"><a href="/help">HELP</a></li>
+
+<!-- menu-item-750 -->
+
+<li>
+<form name="cse" target="_blank"  id="searchbox_demo" action="http://www.google.com/cse?">
+  <input type="hidden" name="cx" value="014058222028360300247:qyhlreekp6y" />
+
+  <!--input type="hidden" name="cref" value="014058222028360300247:qyhlreekp6y" /-->
+  <input type="hidden" name="ie" value="utf-8"  />
+  <input type="hidden" name="hl" value=""  />
+  <input name="q" type="text" size="15" style = "height:10px;" value = ""/>
+  
+  <input type="image" name="sa"  src="/img/search.png" alt="Submit Form" height = "23" weight = "22" style="margin-left:-5px; margin-bottom:-6.5px">
+  <script>
+	alert(document.getElementsById("q").value);
+	document.getElementsById("q").value = document.getElementsById("q").value+" site:glycam.org";
+  </script>
+</form>
+</div></li>                                
+
+</ul> <!--/div-->	</nav>
+<!--/div-->
+
+<!-- No script for Juiz Last Tweet Widget :) -->
+
+<!--script type='text/javascript' src='http://glycam.org/wp-content/plugins/wp-super-faq/wp_super_faq.js?ver=3.4.2'></script>
+<script type='text/javascript' src='http://glycam.org/wp-content/themes/twentytwelve/js/navigation.js?ver=1.0'></script>
+
+<script type='text/javascript' src='http://glycam.org/wp-content/plugins/dynamic-to-top/js/libs/jquery.easing.js?ver=1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mv_dynamic_to_top = {"text":"To Top","version":"0","min":"300","speed":"1100","easing":"easeInExpo","margin":"20"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://glycam.org/wp-content/plugins/dynamic-to-top/js/dynamic.to.top.min.js?ver=3.4.2'></script>
+<script type='text/javascript' src='http://glycam.org/wp-content/plugins/juiz-last-tweet-widget/js/juiz_ltw_auto_slide.min.js?ver=1.1.4'></script-->
+
+
+</body>
+</html>
+
+
+ <link rel="stylesheet" type="text/css" href="/css/buttonbox.css" />
+ <link rel="stylesheet" type="text/css" href="/css/subModal.css" />
+ <script type="text/javascript" src="/js/subModal-common.js"></script>
+ <script type="text/javascript" src="/js/subModal.js"></script>
+ <script type="text/javascript">
+ //String id = request.getParameter( "id" );
+ function return_string(str) {
+  document.getElementById("structure").value = str;
+ }
+ function return_ab(str) {
+
+  document.getElementById("result").value = str;
+ }
+
+
+var QueryString = function () {
+  // This function is anonymous, is executed immediately and 
+  // the return value is assigned to QueryString!
+  var query_string = {};
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    	// If first entry with this name
+    if (typeof query_string[pair[0]] === "undefined") {
+      query_string[pair[0]] = pair[1];
+    	// If second entry with this name
+    } else if (typeof query_string[pair[0]] === "string") {
+      var arr = [ query_string[pair[0]], pair[1] ];
+      query_string[pair[0]] = arr;
+    	// If third or later entry with this name
+    } else {
+      query_string[pair[0]].push(pair[1]);
+    }
+  } 
+    return query_string;
+} ();
+
+
+function gobuild(seq){
+  //seq = "\""+seq+"\"";
+  window.document.getElementById("structure").value= seq;
+  window.document.getElementById("shiny-navy").click();
+
+
+}
+function popup(pass){
+
+
+  if (pass =="3"){
+ showPopWin("/oligosaccharide_library/CFGArray.html", 900, 525, return_string);
+  }else if(pass == "4") {
+ showPopWin("/oligosaccharide_library/N-Glycan.html", 900, 525, return_string);
+ }else if(pass == "5"){
+ showPopWin("/oligosaccharide_library/HighMannose.html", 900, 525, return_string);
+ }else if(pass =="6"){
+ showPopWin("/oligosaccharide_library/Sialylated.html", 900, 525, return_string);
+ }else if(pass =="8"){
+ showPopWin("/PointAndClickTool_CS.html", 900, 545, return_string);
+ }else if(pass =="7"){
+ showPopWin("/oligosaccharide_library/Complex-type.html", 900, 545, return_string);
+ }else if(pass == "1"){
+ //window.open("/PointAndClickTool.html", 'cb', 'width=500,height=600,scrollbars=yes');
+  showPopWin("/PointAndClickTool.html", 900, 615, return_string);
+ }else if(pass == "0"){
+  showPopWin("/text.html", 650, 250, return_string);
+ }else if(QueryString.condensed){
+   gobuild(QueryString.condensed);
+   document.getElementById('cfgseq').value = "a";
+ }else if(QueryString.cfg){
+   //var obj = CfgConverter cfg;
+   //var seq = CfgConverter.cfgToGlycamString(QueryString.cfg);
+   document.getElementById('cfgseq').value = QueryString.cfg;
+   //if QueryString.cfg
+   QueryString.cfg = QueryString.cfg.replace('%3f','');
+   //alert(QueryString.cfg.replace("%3f",""));
+   if (QueryString.cfg[QueryString.cfg.length-1] !== 'a'&& QueryString.cfg[QueryString.cfg.length-1] !== 'b'){
+	 // showPopWin("/ChooseEnd.jsp", 450, 250, return_string);
+	//var authWindow =
+	 //window.open('/ChooseEnd.jsp', 'authWindow', '');
+	 showPopWin("/ChooseEnd.jsp", 800,550, '');
+	}else{
+        gobuild(QueryString.cfg);
+   }
+   //gobuild(seq);
+ }else if(QueryString.glycam){
+   var seq = convertGlycam(QueryString.glycam);
+   document.getElementById('cfgseq').value = "a";
+   gobuild(seq);
+ }
+ 
+
+}
+
+
+function reLoadPage(){
+   window.hidePopWin();
+   //window.location="build-glycan";
+
+}
+
+function HandlePopupResult(result) {
+    //alert("result of popup is: " + result);
+    
+    gobuild(QueryString.cfg +result);
+    //return result;
+}
+
+function convertGlycam(glycam){
+	var res = glycam.split("(")
+	var result = new Array();
+	for (var i = 0; i< res.length;i++){//
+		var eles = res[i].split("-");
+		if (eles.length == 4){//
+			result.push(eles[1]);
+			result.push(eles[2]);
+			result.push(eles[0].toLowerCase());	
+
+		}//
+		if (eles.length == 6){//
+			var tmp = "";
+			tmp = tmp+eles[0];
+        		tmp = tmp+"-";
+   		        tmp = tmp+eles[1].replace(")","");
+    		        tmp = tmp+eles[3];
+        		tmp = tmp+eles[4];
+			if (eles[2].indexOf("[")!= -1){//
+		            tmp = tmp+eles[2][1].toLowerCase();
+		            if (tmp[3] == "]"){
+                		tmp = tmp.substring(0,4)+"["+tmp.substring(4,tmp.length);}
+            		    else{      
+                		tmp = tmp.substring(0,3)+"["+tmp.substring(3,tmp.length);}}//
+
+     
+        	        if (eles[2].indexOf("[")== -1){//
+            	    	    tmp = tmp + eles[2].toLowerCase();}//
+
+			if (eles[5]){//
+			    tmp = tmp +"1-"+eles[5];
+			}//
+			result.push(tmp)
+
+
+			
+
+
+		}//
+	
+	}//
+
+var str = "";
+for (var i = 0; i<result.length;i++){
+
+	str = str + result[i];
+}
+
+return str;
+}
+
+
+
+ </script>
+
+<!--script language=javascript>
+window.name = "doUpLoadProc";
+</script-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38128586-2', 'glycam.org');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body onLoad="popup(null)">  <!--onunLoad="popup(null)"-->
+
+<style>
+/*
+ * steps on tools pages
+ */
+#steps { 
+  margin:0px; 
+  display:inline-block; 
+  border-top:1px solid black; 
+  border-bottom:1px solid black; 
+
+}
+
+#steps span { 
+  margin-right:23px; 
+  margin-left:23px; 
+  margin-top:15px;
+  margin-bottom:30px;  
+  color:#aaaaaa; 
+  display:inline-block; 
+}
+
+#steps .selected { 
+  color:black; 
+}
+
+
+#block { 
+
+  padding-left:40px;
+  margin-top: -40px; 
+  margin-left:130px; 
+  background-image:url('/img/glycan_background.png');
+  background-size:800px 600px;
+  background-repeat:no-repeat;
+  padding-top:20px;
+}
+
+
+
+
+</style>
+
+<script>
+ function submitOnClick(formName){
+	document.forms[formName].submit();
+
+ }
+</script>
+
+<form method="post" id="theForm" >
+  <!--%@ include file="/inc/nav.inc" %-->
+
+
+  <!--h1>Carbohydrate Builder at <a href="/"><img src="/img/logo.ico" width=50 title = "Home" >  </a>  </h1-->
+  <br />  <br />  <br />
+ <br />
+<div id="wrapper">
+ <!--%@ include file="/inc/nav.inc" %-->
+ <!--h1>Molecular Dynamics Files</h1-->
+  <br />
+  <br />
+  <br />
+  <input type="hidden" id="cfgseq" name="cfgseq" value="a">
+  <input type="hidden" id="email" name="email" value="">
+  <input type="hidden" id="projectName" name="projectName" value="">
+  
+<a href="/cb" style="    outline: none; " title="Return to CB builder home page">  <div id="box-navy" class="css3-button" style="margin-left:0px">Carbohydrate Builder<span></span></div></a>
+  <br />
+
+
+
+  <div id="steps">
+  <span> &nbsp;</span>
+  <span class="selected">Step 1:<br />Set Glycan Sequence</span>
+  <span  STYLE="color: black; font-size: 15pt">&rarr;</span>
+  <span >Step 2:<br />Set Options</span>
+  <span  STYLE="color: black; font-size: 15pt">&rarr;</span>
+  <span>Step 3:<br />Wait for Server</span>
+  <span  STYLE="color: black; font-size: 15pt">&rarr;</span>
+  <span>Step 4:<br />Download Files</span>
+  <span> &nbsp;</span>
+ </div>
+
+
+  <br />  <br />
+ <br />
+
+ <p style = "font-size: 18pt"><strong>STEP 1:</strong></p>
+<br />
+ <p><strong>Set Glycan Sequence</strong></p>
+  <div id="block">
+   <ul>
+    <li>
+     <!--input class="instruction" type="button" onclick="button_click();"
+            value="Create a structure with the interactive carbohydrate builder." />
+     <img onclick="button_click();" src="/img/external-link.jpg" />
+    </li>
+    <li>
+     
+     <input class="instruction" type="button" onclick="library_click(null);"
+            value="Choose a structure from the oligosaccharide library." />
+     <img onclick="library_click();" src="/img/external-link.jpg" />
+    </li>
+   </ul>
+   <p class="instruction">or</p>
+   <p class="instruction">Enter a structure in condensed GLYCAM notation in the box below.</p-->
+   <br>
+
+   <p class="instruction"><strong style=" font-size:16px;">Enter a structure in condensed GLYCAM notation.</strong></p>
+      
+   
+
+
+
+
+<p style="font-color:gray; font-weight:bold; font-size:14px; padding:0px; color:#CD6839">     </p>
+
+
+   <!--p id="structure" name="structure" style="display:none"></p><br /-->
+
+   <textarea id="structure" name="structure" cols="50" rows = "4"  style="font-size:20px;" style=""></textarea><br />
+   
+    <br />
+   <!--input type="submit" class="button" id = "next" value="Submit" /-->
+   <div id="shiny-navy" class="css3-button"  onclick="submitOnClick('theForm')" style = "margin-left:500px">Submit<span></span></div>
+   <!--div id="next" onclick="submitOnClick('theForm')"></div-->
+  <br /> <br >  <br /> <br >  <br /> <br >
+  </div> <!-- block -->
+  <br /> <br >
+  
+
+
+	<footer id="colophon" role="contentinfo" style="position:relative;  bottom:0px;"><!--style = "background-color:gray"-->
+		<div class="site-info">
+			<p style="text-align:center">Copyright &copy;2013 <a href="http://glycam.org/"" />Glycam</a> | The University of Georgia | Complex Carbohydrate Research Center (CCRC) | 315 Riverbend Rd | Athens, Ga 30602 </p><hr />
+
+
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+
+ </div> <!-- wrapper -->
+</form>
+</body>
+</html>
+

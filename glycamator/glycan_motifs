@@ -1,0 +1,111 @@
+# Branched trisaccharides
+
+DGlcpNAcb1-4[LFucpa1-3]DGlcpNAcb1-OH                        # core a3Fuc
+DGlcpNAcb1-4[LFucpa1-6]DGlcpNAcb1-OH                        # core a6Fuc
+DManpb1-4[LFucpa1-3]DGlcpNAcb1-OH                           # core a3Fuc on 2nd GlcNAc
+DManpb1-4[LFucpa1-6]DGlcpNAcb1-OH                           # core a6Fuc on 2nd GlcNAc
+DManpb1-4[DGlcpNAcb1-6]DGlcpNAcb1-OH                        # core b6GlcNAc on 2nd GlcNAc
+DGalpb1-3[LFucpa1-4]DGlcpNAcb1-OH
+DGalpb1-4[LFucpa1-3]DGlcpNAcb1-OH
+DGalpb1-3[DNeu5Aca2-6]DGlcpNAcb1-OH
+DGlcpNAcb1-6[DGlcpNAcb1-3]DGalpNAca1-OH                     # core 4
+DGlcpNAcb1-6[DGlcpNAcb1-3]DGalpNAcb1-OH                     
+
+
+# Linear trisaccharides
+
+DManpb1-4DGlcpNAcb1-4DGlcpNAcb1-OH                          # M1Gn2 without Fuc
+DManpa1-2DManpa1-3DManpb1-OH                                # a2Man on Man3 on bMan
+DManpa1-2DManpa1-3DManpa1-OH                                # a2Man on Man3 on aMan
+DManpa1-2DManpa1-6DManpa1-OH                                # a2Man on Man6 on aMan
+DGlcpa1-3DManpa1-2DManpa1-OH                                # Glc on high Man in ER
+DGalpb1-4DGlcpNAcb1-2DManpa1-OH                             # Galb-4GlcNacb-2Mana antenna
+DGalpb1-4DGlcpNAcb1-6DManpa1-OH                             # Galb-4GlcNacb-6Mana antenna
+DGalpb1-4DGlcpNAcb1-3LFucpa1-OH                             # Galb-4GlcNacb-3Fuca (O-Fucosylation)
+DGlcpa1-2DGlcpa1-3DGlcpa1-OH                                # Glc3 antenna on N-glycan in ER
+DNeu5Aca2-3DGalpb1-3DGlcpNAcb1-OH                           # Sia3-Galb3 antenna terminus
+DNeu5Aca2-6DGalpb1-3DGlcpNAcb1-OH                           # Sia6-Galb3 antenna terminus
+DNeu5Aca2-3DGalpb1-4DGlcpNAcb1-OH                           # Sia3-Galb4 antenna terminus
+DNeu5Aca2-6DGalpb1-4DGlcpNAcb1-OH                           # Sia6-Galb4 antenna terminus
+DNeu5Aca2-3DGalpb1-3DGalpNAcb1-OH                           # Sia3-Galb3-GalNAc (GSL)
+DNeu5Aca2-8DNeu5Aca2-8DNeu5Aca2-OH                          # a2,8 polySia
+DNeu5Aca2-9DNeu5Aca2-9DNeu5Aca2-OH                          # a2,9 polySia
+DNeu5Aca2-8DNeu5Aca2-9DNeu5Aca2-OH                          # a2,8/9 polySia
+LFucpa1-2DGalpb1-3DGlcpNAcb1-OH                             # Fuca-2Galb3 antenna
+LFucpa1-2DGalpb1-4DGlcpNAcb1-OH                             # Fuca-2Galb4 antenna
+DGalpa1-3DGalpb1-4DGlcpNAcb1-OH                             # Gala-3Galb4 antenna
+LFucpa1-2DGalpb1-3DGalpNAcb1-OH
+DGalpb1-3DGalpNAcb1-3DGalpa1-OH
+DGlcpb1-4DGlcpb1-4DGlcpb1-OH                                # Cellulose
+DGlcpa1-4DGlcpa1-4DGlcpa1-OH                                # Amylose, glycogen
+DGlcpa1-6DGlcpa1-6DGlcpa1-OH                                # Dextran
+DGlcpb1-3DGlcpb1-3DGlcpb1-OH                                # b1,3-glucan
+DGlcpb1-3DGlcpb1-4DGlcpb1-OH                                # b1,3/4-glucan
+DGalpb1-4DGlcpNAcb1-3DGalpb1-OH                             # poly-LacNAc
+DGlcpNAcb1-3DGalpb1-4DGlcpNAcb1-OH                          # poly-LacNAc
+DGalpNAcb1-4DGlcpNAcb1-3DGalpNAcb1-OH                       # poly-LacdiNAc
+DGlcpNAcb1-3DGalpNAcb1-4DGlcpNAcb1-OH                       # poly-LacdiNAc
+DGlcpNAcb1-3DGalpNAcb1-3DGalpNAca1-OH                       # core 1
+DNeu5Aca2-8DNeu5Aca2-3DGalpb1-OH                            # Sia-a8-Sia-a3-Galb
+DGalpb1-3DGalpNAcb1-4DGalpb1-OH                             # Gal-b3-GalNAc-b4-Galb
+DXylpa1-3DXylpa1-3DGlcpb1-OH                                # Xyl-Xyl-Glc (O-glucosylation)
+DGlcpNAcb1-4DGlcpAb1-3DGlcpNAcb1-OH                         # hyaluronic acid
+DGlcpAb1-3DGlcpNAcb1-4DGlcpAb1-OH                           # hyaluronic acid
+DGlcAb1-3DGalb1-3DGalb1-OH                                  # GAG linker
+DGalb1-3DGalb1-4DXylb1-OH                                   # GAG linker
+DGlcpNAcb1-4DGlcpNAcb1-4DGlcpNAcb1-OH                       # Chitin
+DGalfb1-5DGalfb1-5DGalfb1-OH                                # Galf-b5 (Aspergillus)
+DGalfb1-6DManpa1-6DManpa1-OH                                # Galactomannan on O-glycans (Aspergillus)
+DXylpb1-3DManpa1-3DManpa1-OH                                # Galactoxylomannan (Cryptococcus)
+DManpa1-3DManpa1-4DGalpb1-OH                                # Galactoxylomannan (Cryptococcus)
+DGalpa1-6DGalpa1-6DGalpa1-OH                                # GalXM backbone (Cryptococcus)
+DManpa1-3DManpa1-2DManpa1-OH                                # yeast mannoproteins
+DManpa1-6DManpa1-6DManpa1-OH                                # yeast mannoprotein backbone
+DManpb1-2DManpb1-2DManpb1-OH                                # b2-mannan (Candida)
+
+
+# Branched tetrasaccharides
+
+DManpa1-6[DManpa1-3]DManpb1-4DGlcpNAcb1-OH                  # high Man core
+DManpa1-6[DManpa1-3]DManpa1-6DManpb1-OH                     # outer branching Man in high Man
+DGlcpNAcb1-6[DGlcpNAcb1-2]DManpa1-6DManpb1-OH               # biantennary Man6
+DGlcpNAcb1-4[DGlcpNAcb1-2]DManpa1-3DManpb1-OH               # biantennary Man3
+DGlcpNAcb1-6[DGlcpNAcb1-4][DGlcpNAcb1-3]DGlcpNAca1-OH
+DGlcpNAcb1-6[DGlcpNAcb1-4][DGlcpNAcb1-3]DGlcpNAcb1-OH
+DGlcpNAcb1-4[LFucpa1-3][LFucpa1-6]DGlcpNAcb1-OH             # bifucosylated core (invertebrates)
+DGalpb1-4[LFucpa1-3]DGlcpNAcb1-2DManpa1-OH                  # Lewis x on 2Mana
+DGalpb1-4[LFucpa1-3]DGlcpNAcb1-4DManpa1-OH                  # Lewis x on 4Mana
+DGalpb1-3[LFucpa1-4]DGlcpNAcb1-2DManpa1-OH                  # Lewis a on 2Mana
+DGalpb1-3[LFucpa1-4]DGlcpNAcb1-4DManpa1-OH                  # Lewis a on 4Mana
+DNeu5Aca2-3[DGalpNAcb1-4]DGalpb1-4DGlcpNAcb1-OH             # Sia3-[GalNAcb4]Galb4 antenna terminus
+DNeu5Aca2-3[DGalpNAcb1-4]DGalpb1-4DGlcpb1-OH                # Sia3-[GalNAcb4]Galb4 antenna terminus
+DNeu5Aca2-6[DGalpb1-3]DGalpNAcb1-4DGalpb1-OH                # Sia3-[GalNAcb4]Galb4 antenna terminus
+LFucpa1-2[DGalpNAcb1-3]DGalpb1-4DGlcpNAcb1-OH               # Fuca2-[GalNAcb3]Galb4 antenna terminus
+LFucpa1-2[DGalpNAca1-3]DGalpb1-3DGlcpNAcb1-OH               # Type-1 A antigen
+LFucpa1-2[DGalpNAca1-3]DGalpb1-4DGlcpNAcb1-OH               # Type-2 A antigen
+LFucpa1-2[DGalpNAca1-3]DGalpb1-3DGalpNAca1-OH               # Type-3 A antigen
+LFucpa1-2[DGalpNAca1-3]DGalpb1-3DGalpNAcb1-OH               # Type-4 A antigen
+LFucpa1-2[DGalpa1-3]DGalpb1-3DGlcpNAcb1-OH                  # Type-1 B antigen
+LFucpa1-2[DGalpa1-3]DGalpb1-4DGlcpNAcb1-OH                  # Type-2 B antigen
+LFucpa1-2[DGalpa1-3]DGalpb1-3DGalpNAca1-OH                  # Type-3 B antigen
+LFucpa1-2[DGalpa1-3]DGalpb1-3DGalpNAcb1-OH                  # Type-4 B antigen
+DGalpb1-4[LFucpa1-3]DGlcpNAcb1-3DGalpb1-OH                  # core 1 
+DGlcpNAcb1-6[DGlcpNAcb1-3][DGalpb1-4]DGlcpNAcb1-OH          # extended core 3
+DXylpb1-2[DManpa1-3]DManpa1-4DGalpb1-OH                     # GalXM (Cryptococcus)
+DXylpb1-3[DManpa1-4]DGalpb1-3DGalpa1-OH                     # GalXM (Cryptococcus)
+DGalpb1-3[DGalpa1-6]DGalpa1-6DGalpa1-OH                     # GalXM (Cryptococcus)
+DXylpb1-2[DManpa1-3]DManpa1-3DManpa1-OH                     # GXM (Cryptococcus)
+DManpa1-2[DManpa1-6]DManpa1-6DManpa1-OH                     # yeast mannoprotein backbone
+DGlcpb1-3[DGlcpb1-6]DGlcpb1-3DGlcpb1-OH                     # b6-branching in b1,3-glucan (fungi)
+DGlcpa1-4[DGlcpa1-6]DGlcpa1-4DGlcpa1-OH                     # Glycogen
+DGlcpa1-3[DGlcpa1-6]DGlcpa1-6DGlcpa1-OH                     # Dextran
+
+
+
+# Branched pentasaccharides (methane-like configuration)
+
+DManpa1-6[DManpa1-3][DGlcpNAcb1-4]DManpb1-4DGlcpNAcb1-OH    # bisecting core
+DManpa1-6[DManpa1-3][DXylpb1-2]DManpb1-4DGlcpNAcb1-OH       # bisecting core (plants)
+DGlcpNAcb1-6[DGlcpNAcb1-4][DGlcpNAcb1-2]DManpa1-3DManpb1-OH # tri-GlcNacylated Man3-Manb
+DGlcpNAcb1-6[DGlcpNAcb1-4][DGlcpNAcb1-2]DManpa1-6DManpb1-OH # tri-GlcNacylated Man6-Manb
+DGlcpAb1-2[DManpa1-3][DXylpb1-4]DManpa1-3DManpa1-OH         # GXM (Cryptococcus)
