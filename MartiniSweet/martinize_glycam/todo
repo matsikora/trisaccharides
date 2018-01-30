@@ -1,0 +1,20 @@
+Idea: Martinize for carbohydrates and glycoproteins with
+         - no need for pre-martinize
+         - novel structures (monosaccharides and linkage need to be known)
+         - output that facilitates later automatized parameter optimization
+
+- Input: GLYCAM-formatted pdb (required) 
+         a mapping scheme (triangular vs. polymeric) (optional)   
+         MARTINI force field
+         
+- Strategy: 
+    Use latest martinize.py 2.6 as starting point
+
+    Loop through sugars from reducing end (or amino acid linkage)
+      - Identify sugars (e.g. beta-D-Gal) and their substitution (1,4) from LINK section
+      - Look up mapping (say C1, C2, O2 => SP1, C3, O3, C4, O4 => SP4, etc.) and topology (internal and external bonds,
+        angles, dihedrals, exclusions) according to chosen mapping scheme and force field and substitution
+      - Write topology with comments allowing for later automatized parameter optimization on the itp file
+        (like 
+                # bonds
+                1  2   0.340 4000 ; 4YB 1-2 
