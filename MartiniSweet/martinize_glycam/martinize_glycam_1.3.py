@@ -5104,8 +5104,8 @@ class Topology(object):
         # and dihedrals, and take the first four lists out
         # This will avoid errors for residues for which
         # these are not defined.
-        logging.debug('And now, the glycan topology...')
-        quit()
+        logging.info('Glycan topology not yet existing. Exiting deliberately.')
+        sys.exit()
         sc = [(self.options['ForceField'].sidechains[res]+5*[[]])[:5] for res in self.sequence]
 
         # ID of the first atom/residue
